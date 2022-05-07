@@ -1,0 +1,21 @@
+.bar {
+  background-color: #BDBDBD;
+  width: 152px;
+}
+
+.bar__wrapper {
+  display: flex;
+  flex-direction: column;
+  padding-top: 35px;
+  margin-left: 20px;
+  width:fit-content;
+}
+
+.bar__sort {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  color: #000000;
+  margin-top: 0;
+  margin-bottom: 10px;
+}

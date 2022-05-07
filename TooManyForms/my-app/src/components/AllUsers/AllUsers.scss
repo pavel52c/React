@@ -1,0 +1,22 @@
+.UserCard {
+  background-color: #F3F3F3;
+  border-radius: 8px;
+
+}
+
+.UserCard:not(:last-child) {
+  margin-bottom: 14px;
+}
+
+h1 {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 16px;
+  margin-top: 0;
+  margin-bottom: 17px;
+}
+
+.description {
+  margin-top: 10px;
+  float: right;
+}

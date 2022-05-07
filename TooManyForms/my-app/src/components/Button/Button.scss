@@ -1,0 +1,24 @@
+.blueButton {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  color: #FFFFFF;
+  padding: 5px 15px;
+  background-color: #4B51EF;
+  border: none;
+  border-radius: 5px;
+  width: fit-content;
+}
+
+.blueButton:hover {
+  cursor: pointer;
+  background-color: #696ff3;
+}
+
+.blueButton:active {
+  background-color: #252cf5;
+}
+
+.blueButton:not(:last-child) {
+  margin-bottom: 10px;
+}
