@@ -2,21 +2,23 @@
   background-color: #F3F3F3;
   border-radius: 8px;
 
+  &:not(:last-child) {
+    margin-bottom: 14px;
+  }
 }
 
-.UserCard:not(:last-child) {
-  margin-bottom: 14px;
-}
+.All-users {
 
-h1 {
-  font-weight: 700;
-  font-size: 14px;
-  line-height: 16px;
-  margin-top: 0;
-  margin-bottom: 17px;
-}
+  &__title {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 16px;
+    margin-top: 5px;
+    margin-bottom: 17px;
+  }
 
-.description {
-  margin-top: 10px;
-  float: right;
+  &__description {
+    margin-top: 10px;
+    float: right;
+  }
 }

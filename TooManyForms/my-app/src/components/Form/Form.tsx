@@ -1,7 +1,11 @@
 import "./Form.scss"
 import {Input} from "../Input/Input";
 import {useForm} from "react-hook-form";
-import {initialForm} from "./initialForm";
+import {useNavigate} from "react-router-dom";
+import {TextAreaInput} from "../TextAreaInput/TextAreaInput";
+import {filterData} from "./filterData";
+import { Key } from "react";
+import inputInterface from "../Input/inputInterface";
 
 interface IFormInputs {
     firstName: string;
@@ -10,12 +14,15 @@ interface IFormInputs {
     website: string;
 }
 
-export const Form = (props: any):JSX.Element => {
+export const Form = (props: any): JSX.Element => {
 
-    const {register, handleSubmit } = useForm();
+    const {  disabled } = props;
+    const navigate = useNavigate();
 
-    const onSubmit = (data: IFormInputs|any) => {
-        console.log(JSON.stringify(data));
+    const {register, handleSubmit} = useForm();
+
+    const onSubmit = (data: IFormInputs | any) => {
+        navigate("/allUsers")
     };
 
     const textAreaProps = {
@@ -23,17 +30,27 @@ export const Form = (props: any):JSX.Element => {
         placeHolder: "",
         registerName: "comment",
         name: "comment",
+        register,
+        disabled,
+    }
+
+    const data: any = JSON.parse(localStorage.getItem(localStorage.key(0) || "") || JSON.stringify({}))
+    const rightData = filterData(data);
+
+    const inputProps = {
+        register,
+        disabled,
     }
 
     return (
         <form onSubmit={handleSubmit(onSubmit)}>
-            <ul>
-                {initialForm.map(
-                    (el, index) => <li><Input {...el} register={register} key={index}/></li>
+            <ul className="Form__list">
+                {rightData.map(
+                    (el: JSX.IntrinsicAttributes & inputInterface, index: Key | null | undefined) => <li><Input {...el} key={index} {...inputProps}/></li>
                 )}
-                <li><Input {...textAreaProps} register={register} key={123456}/></li>
+                <li><TextAreaInput {...textAreaProps} key={123456}/></li>
             </ul>
-            <input type="submit"/>
+            <input type="submit" onSubmit={onSubmit} className={`Form__submit-btn ${!disabled ? "Form__submit-btn__active" : ""}`}/>
         </form>
     )
 }

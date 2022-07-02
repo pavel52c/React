@@ -8,16 +8,17 @@ import {UserCard} from "../UserCard/UserCard";
 export const AllUsers = (props: allUsersInterface): JSX.Element => {
 
     const [state, setState] = useState<Array<userInterface>>([]);
-    getData(setState)
+    if (state.length === 0)
+        getData(setState);
 
     return (
         <>
-            <h1>Список пользователей</h1>
+            <h1 className="All-users__title">Список пользователей</h1>
             <ul>
                 {state.map((element: userInterface) => <li key={element.id} className="UserCard">
                     <UserCard {...element}/></li>)}
             </ul>
-            <p className="description">Найдено {state.length} пользователей</p>
+            <p className="All-users__description">Найдено {state.length} пользователей</p>
         </>
     )
 }
