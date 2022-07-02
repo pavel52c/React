@@ -5,7 +5,7 @@ import {getData} from "../../getData";
 import userInterface from "./userInterface";
 import {UserCard} from "../UserCard/UserCard";
 
-export const AllUsers = (): JSX.Element => {
+export const AllUsers = (props: allUsersInterface): JSX.Element => {
 
     const [state, setState] = useState<Array<userInterface>>([]);
     if (state.length === 0)
