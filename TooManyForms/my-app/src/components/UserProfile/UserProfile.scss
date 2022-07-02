@@ -1,0 +1,20 @@
+.user-profile {
+  width: 459px;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 11px;
+  }
+
+  &__title {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 16px;
+  }
+
+  &__btn {
+    padding: 4px 15px;
+    font-size: 13px;
+  }
+}

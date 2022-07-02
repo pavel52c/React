@@ -1,4 +1,30 @@
-div {
+.Input {
   display: flex;
   flex-direction: column;
+  max-width: 211px;
+
+  &__label {
+    font-size: 12px;
+    line-height: 13px;
+  }
+
+  &__input {
+    background-color: #FFFFFF;
+    border: 1px solid #D8D8D8;
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-size: 14px;
+    line-height: 16px;
+  }
+
+  &__text-area {
+    background-color: #FFFFFF;
+    width: 420px;
+    border: 1px solid #D8D8D8;
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-size: 14px;
+    line-height: 16px;
+    min-height: 55px;
+  }
 }
