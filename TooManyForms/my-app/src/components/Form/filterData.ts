@@ -1,4 +1,4 @@
-import userInterface from "../AllUsers/userInterface";
+import userInterface from "../../models/userInterface";
 import { initialForm } from "./initialForm";
 
 export const filterData = (data: userInterface | any) => {

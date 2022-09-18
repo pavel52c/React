@@ -1,5 +1,5 @@
 import "./UserCard.scss"
-import userInterface from "../AllUsers/userInterface";
+import userInterface from "../../models/userInterface";
 import {Link} from "react-router-dom";
 import React from "react";
 

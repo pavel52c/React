@@ -1,8 +1,8 @@
 import "./AllUsers.scss"
-import allUsersInterface from "./allUsersInterface";
+import allUsersInterface from "../../models/allUsersInterface";
 import {useState} from "react";
 import {getData} from "../../getData";
-import userInterface from "./userInterface";
+import userInterface from "../../models/userInterface";
 import {UserCard} from "../UserCard/UserCard";
 
 export const AllUsers = (props: allUsersInterface): JSX.Element => {
