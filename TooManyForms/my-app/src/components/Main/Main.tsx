@@ -1,10 +1,9 @@
 import "./Main.scss"
-import mainInterface from "./mainInterface";
+import mainInterface from "../../models/mainInterface";
 import {Routers} from "../Routers/Routers";
-import React from "react";
 
 export const Main = (props: mainInterface): JSX.Element => {
-    const {filter} = props;
+    const { filter } = props;
     const routersProps = {
         filter,
     }

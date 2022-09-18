@@ -1,0 +1,128 @@
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+p {
+  margin: 0;
+}
+
+ul {
+  list-style-type: none;
+}
+
+h1, h3 {
+  margin: 0;
+}
+
+.header {
+
+}
+
+.header__title {
+  text-align: center;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+}
+
+.nav > form {
+  margin-right: 30px;
+}
+
+.nav__inputs {
+  width: fit-content;
+}
+
+.nav__item {
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav__item:not(:last-child) {
+  margin-bottom: 15px;
+}
+
+.nav__item > label {
+  padding-right: 10px;
+}
+
+.main__btn {
+  margin-left: 40px;
+  display: block;
+  margin-bottom: 20px;
+}
+
+.main__input {
+  /*display: inline-block;*/
+  margin-left:40px;
+  margin-right: 10px;
+}
+
+.main__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  padding: 0;
+}
+
+.main__item {
+  border: 1px solid grey;
+  height: 150px;
+  width: 452px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.main__title {
+  height: 16.67%; /* Нам же нужно 1/6 от родителя, поэтому я задаю высоту самой карточке, блокам внутри от родителя, но 100% к сожалению на 6 не делится */
+  margin-top: 4px;
+  border-bottom: 1px solid grey;
+  width: 100%;
+  position: relative;
+}
+
+.main__description {
+  height: 66.66%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid grey;
+  width: 100%;
+}
+
+.main__item-bottom {
+  height: 16.67%;
+  margin-top: 4px;
+}
+
+.main__item-close {
+  cursor: pointer;
+}
+
+.main__item-close:before {
+  position: absolute;
+  right: 5px;
+  top: 4px;
+  content: " ";
+  width: 10px;
+  height: 1px;
+  border-bottom: 1px solid black;
+  transform: rotate(45deg);
+}
+
+.main__item-close:after {
+  position: absolute;
+  right: 10px;
+  content: " ";
+  width: 1px;
+  height: 10px;
+  border-right: 1px solid black;
+  transform: rotate(45deg);
+}
+

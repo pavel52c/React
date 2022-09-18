@@ -1,6 +1,6 @@
 import "./TextAreaInput.scss"
 import  "../Input/Input.scss"
-import inputInterface from "../Input/inputInterface";
+import inputInterface from "../../models/inputInterface";
 
 export const TextAreaInput = (props:inputInterface) => {
     const { placeHolder, label, register, registerName, disabled } = props;

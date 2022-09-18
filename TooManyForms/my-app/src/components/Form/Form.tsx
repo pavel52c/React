@@ -1,11 +1,14 @@
 import "./Form.scss"
 import {Input} from "../Input/Input";
-import {useForm} from "react-hook-form";
+import { useForm, Resolver } from "react-hook-form";
 import {useNavigate} from "react-router-dom";
 import {TextAreaInput} from "../TextAreaInput/TextAreaInput";
 import {filterData} from "./filterData";
 import { Key } from "react";
-import inputInterface from "../Input/inputInterface";
+import inputInterface from "../../models/inputInterface";
+import {useValidationSchema} from "./validationSchema";
+import {yupResolver} from "@hookform/resolvers/yup";
+import * as Yup from "yup";
 
 interface IFormInputs {
     firstName: string;
@@ -14,17 +17,34 @@ interface IFormInputs {
     website: string;
 }
 
+type FormValues = {
+    name: string,
+    username: string,
+    email: string,
+    street: string,
+    city: string,
+    zipcode: string,
+    phone: string,
+    website: string,
+};
+
 export const Form = (props: any): JSX.Element => {
 
-    const {  disabled } = props;
+    const { disabled } = props;
     const navigate = useNavigate();
+    const validationSchema = useValidationSchema();
 
-    const {register, handleSubmit} = useForm();
+    const {
+        register,
+        handleSubmit,
+        formState: { errors },
+    } = useForm<FormValues>({ resolver: yupResolver(validationSchema) });
 
     const onSubmit = (data: IFormInputs | any) => {
+        console.log("data: ", data)
         navigate("/allUsers")
     };
-
+    console.log("errors", errors)
     const textAreaProps = {
         label: "Comment",
         placeHolder: "",
@@ -40,6 +60,7 @@ export const Form = (props: any): JSX.Element => {
     const inputProps = {
         register,
         disabled,
+        errors
     }
 
     return (

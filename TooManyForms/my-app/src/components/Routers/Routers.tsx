@@ -1,7 +1,7 @@
 import "./Routes.scss"
 import {AllUsers} from "../AllUsers/AllUsers";
 import {Routes, Route} from "react-router-dom";
-import routesProps from "./routesProps";
+import routesProps from "../../models/routesProps";
 import {UserProfile} from "../UserProfile/UserProfile";
 
 export const Routers = (props: routesProps) => {

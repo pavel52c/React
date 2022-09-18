@@ -6,4 +6,10 @@ export default interface inputInterface {
     value?: any;
     disabled?: boolean;
     register: (registerName: any) => any;
+    errors?: {
+        name?: {
+        type?: string;
+        message?: string;
+        }
+    },
 }
